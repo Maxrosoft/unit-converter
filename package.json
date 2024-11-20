@@ -1,0 +1,30 @@
+{
+    "name": "unit-converter",
+    "version": "1.0.0",
+    "description": "Unit converter to convert between different units of measurement.",
+    "main": "./src/app.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Maxrosoft/unit-converter.git"
+    },
+    "author": "Maxrosoft",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Maxrosoft/unit-converter/issues"
+    },
+    "homepage": "https://github.com/Maxrosoft/unit-converter#readme",
+    "devDependencies": {
+        "nodemon": "^3.1.7"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "ejs": "^3.1.10",
+        "express": "^4.21.1",
+        "unit-converter": "file:"
+    }
+}
