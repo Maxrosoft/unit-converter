@@ -7,6 +7,8 @@ import apiRouter from "./routes/api.js";
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 app.use(logger);
 
 app.use(healthRouter);
@@ -14,6 +16,5 @@ app.use(converterRouter);
 app.use("/api", apiRouter);
 
 app.use(errorHandler);
-
 
 export default app;
