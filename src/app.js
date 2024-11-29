@@ -4,10 +4,12 @@ import { errorHandler } from "./middlewares/errorHandler.js";
 import healthRouter from "./routes/health.js";
 import converterRouter from "./routes/converter.js";
 import apiRouter from "./routes/api.js";
+import path from "path";
 
 const app = express();
 
 app.set("view engine", "ejs");
+app.set('views', path.join(import.meta.dirname, '/views'));
 
 app.use(logger);
 
