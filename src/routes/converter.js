@@ -9,6 +9,6 @@ router.get(["/length", "/weight", "/temperature"], controller.getControllerByPat
 
 router.post("/convert", controller.makeConversion);
 
-router.get("*", controller.getDefault);
+router.get("/", controller.getDefault);
 
 export default router;
