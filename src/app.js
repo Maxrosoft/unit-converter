@@ -1,4 +1,5 @@
 import express from "express";
+import bodyParser from "body-parser";
 import { logger } from "./middlewares/logger.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import healthRouter from "./routes/health.js";
@@ -9,8 +10,9 @@ import path from "path";
 const app = express();
 
 app.set("view engine", "ejs");
-app.set('views', path.join(import.meta.dirname, '/views'));
+app.set("views", path.join(import.meta.dirname, "/views"));
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(logger);
 
 app.use(healthRouter);

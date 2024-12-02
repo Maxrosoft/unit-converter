@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get(["/length", "/weight", "/temperature"], controller.getControllerByPath);
 
-router.post("/convert", (req, res) => {});
+router.post("/convert", controller.makeConversion);
 
 router.get("*", controller.getDefault);
 
