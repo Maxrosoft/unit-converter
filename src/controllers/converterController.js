@@ -1,4 +1,4 @@
-import convert from "../utils/unitConverter.js";
+import convert from "convert-units";
 
 class ConverterController {
     getDefault(req, res, next) {
@@ -20,12 +20,10 @@ class ConverterController {
 
     makeConversion(req, res, next) {
         try {
-            // console.log(...req.body);
-            // const {value, deom, to, unit} = req.body;
+            const { value, from, to, active } = req.body;
+            const result = convert(+value).from(from).to(to);
 
-            const result = convert(Object.entries(req.body));
-
-            res.render("result", { result: result, active: req.body.unit });
+            res.render("result", { result: result, active: active });
         } catch (error) {
             next(error);
         }
@@ -33,3 +31,4 @@ class ConverterController {
 }
 
 export default ConverterController;
+

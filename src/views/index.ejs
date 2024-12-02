@@ -30,9 +30,7 @@
                         <option value="in">in</option>
                         <option value="ft-us">ft-us</option>
                         <option value="ft">ft</option>
-                        <option value="fathom">fathom</option>
                         <option value="mi">mi</option>
-                        <option value="nMi">nMi</option>
                     <% } else if (active === 'weight') { %>
                         <option value="mcg">mcg</option>
                         <option value="mg">mg</option>
@@ -60,9 +58,7 @@
                         <option value="in">in</option>
                         <option value="ft-us">ft-us</option>
                         <option value="ft">ft</option>
-                        <option value="fathom">fathom</option>
                         <option value="mi">mi</option>
-                        <option value="nMi">nMi</option>
                     <% } else if (active === 'weight') { %>
                         <option value="mcg">mcg</option>
                         <option value="mg">mg</option>
@@ -80,7 +76,7 @@
                     <% } %>
                 </select>
             </div>
-            <input type="hidden" name="unit" value="<%= active%>">
+            <input type="hidden" name="active" value="<%= active%>">
             <button type="submit" class="btn btn-primary w-100">Convert</button>
         </form>
     </div>
