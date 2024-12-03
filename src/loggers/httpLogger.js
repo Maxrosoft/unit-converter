@@ -23,6 +23,5 @@ export const httpLogger = winston.createLogger({
         new winston.transports.File({
             filename: path.join("logs/http.log"),
         }),
-        new winston.transports.Console(),
     ],
 });

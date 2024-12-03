@@ -1,6 +1,6 @@
 import { httpLogger } from "../loggers/httpLogger.js";
 
-const formatHTTPLoggerResponse = (req, res, responseBody) => {
+const formatHTTPLoggerResponse = (req, res) => {
     return {
         request: {
             headers: req.headers,

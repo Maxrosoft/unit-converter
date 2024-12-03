@@ -1,0 +1,85 @@
+<%- include('./partials/header', { title: 'Unit Converter', active: active }) %>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form action="/convert" method="POST" class="border p-4 rounded">
+            <h2 class="mb-3">Convert <%= active.charAt(0).toUpperCase() + active.slice(1) %></h2>
+            <div class="mb-3">
+                <label for="value" class="form-label">
+                    Enter the value to convert
+                </label>
+                <input
+                    type="number"
+                    step=any
+                    id="value"
+                    name="value"
+                    class="form-control"
+                    placeholder="Enter value"
+                    required
+                />
+            </div>
+            <div class="mb-3">
+                <label for="from" class="form-label">
+                    Unit to Convert from
+                </label>
+                <select id="from" name="from" class="form-control" required>
+                    <% if (active === 'length') { %>
+                        <option value="mm">mm</option>
+                        <option value="cm">cm</option>
+                        <option value="m">m</option>
+                        <option value="in">in</option>
+                        <option value="ft-us">ft-us</option>
+                        <option value="ft">ft</option>
+                        <option value="mi">mi</option>
+                    <% } else if (active === 'weight') { %>
+                        <option value="mcg">mcg</option>
+                        <option value="mg">mg</option>
+                        <option value="g">g</option>
+                        <option value="kg">kg</option>
+                        <option value="oz">oz</option>
+                        <option value="lb">lb</option>
+                        <option value="mt">mt</option>
+                        <option value="t">t</option>
+                    <% } else if (active === 'temperature') { %>
+                        <option value="C">C</option>
+                        <option value="F">F</option>
+                        <option value="K">K</option>
+                        <option value="R">R</option>
+                    <% } %>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="to" class="form-label">Unit to Convert to</label>
+                <select id="to" name="to" class="form-control" required>
+                    <% if (active === 'length') { %>
+                        <option value="mm">mm</option>
+                        <option value="cm">cm</option>
+                        <option value="m">m</option>
+                        <option value="in">in</option>
+                        <option value="ft-us">ft-us</option>
+                        <option value="ft">ft</option>
+                        <option value="mi">mi</option>
+                    <% } else if (active === 'weight') { %>
+                        <option value="mcg">mcg</option>
+                        <option value="mg">mg</option>
+                        <option value="g">g</option>
+                        <option value="kg">kg</option>
+                        <option value="oz">oz</option>
+                        <option value="lb">lb</option>
+                        <option value="mt">mt</option>
+                        <option value="t">t</option>
+                    <% } else if (active === 'temperature') { %>
+                        <option value="C">C</option>
+                        <option value="F">F</option>
+                        <option value="K">K</option>
+                        <option value="R">R</option>
+                    <% } %>
+                </select>
+            </div>
+            <input type="hidden" name="active" value="<%= active%>">
+            <button type="submit" class="btn btn-primary w-100">Convert</button>
+        </form>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>

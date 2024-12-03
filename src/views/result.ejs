@@ -1,0 +1,13 @@
+<%- include('./partials/header', { title: 'Conversion Result', active: active }) %>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="border p-4 rounded text-center">
+            <h2>Result of your calculation</h2>
+            <p class="fs-4"><%= result %></p>
+            <a href="/<%= active %>" class="btn btn-secondary mt-3">Reset</a>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>
