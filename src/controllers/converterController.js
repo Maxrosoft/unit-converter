@@ -21,9 +21,14 @@ class ConverterController {
     makeConversion(req, res, next) {
         try {
             const { value, from, to, active } = req.body;
-            const result = convert(+value).from(from).to(to);
+            const result = convert(+value).from(from).to(to);            
 
-            res.render("result", { result: result, active: active });
+            if (req.headers.accept === "application/json") {
+                res.set('Content-Type', 'application/json');
+                res.json({ result: result, active: active });
+            } else {
+                res.render("result", { result: result, active: active });
+            }
         } catch (error) {
             next(error);
         }
@@ -31,4 +36,3 @@ class ConverterController {
 }
 
 export default ConverterController;
-
