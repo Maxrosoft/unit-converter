@@ -20,6 +20,10 @@ app.use(healthRouter);
 app.use(converterRouter);
 app.use("/api", apiRouter);
 
+app.all("*", (req, res) => {
+    res.status(404).render("404");
+});
+
 app.use(errorHandler);
 
 export default app;
